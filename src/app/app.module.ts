@@ -14,6 +14,10 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { PagesComponent } from './pages/pages.component';
+import { MascotasComponent } from './pages/mascotas/mascotas.component';
+import { ServiciomedicoComponent } from './pages/serviciomedico/serviciomedico.component';
+import { SpaComponent } from './pages/spa/spa.component';
+import { ShopComponent } from './pages/shop/shop.component';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import { PagesComponent } from './pages/pages.component';
     SidebarComponent,
     HeaderComponent,
     BreadcrumbsComponent,
-    PagesComponent
+    PagesComponent,
+    MascotasComponent,
+    ServiciomedicoComponent,
+    SpaComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
