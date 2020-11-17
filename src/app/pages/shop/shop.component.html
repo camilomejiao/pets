@@ -1,1 +1,18 @@
-<p>shop works!</p>
+<div class="container">
+  <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Promocion de pelos</h2>
+</div>
+<div class="row">
+
+  <div class="col-3" *ngFor='let producto of productos'>
+    <div class="card" style="width: 18rem;">
+      <img src="../../assets/images/dog.jpg" with="50" height="150" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">{{ producto.titulo }}</h4>
+        <h3>{{producto.valor}}</h3>
+        <p class="card-text">{{ producto.descripcion }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+</div>

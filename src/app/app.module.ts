@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
+//Importante para cargar los modulos
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { HttpClientModule } from "@angular/common/http";
 
 //Modulo
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +23,7 @@ import { MascotasComponent } from './pages/mascotas/mascotas.component';
 import { ServiciomedicoComponent } from './pages/serviciomedico/serviciomedico.component';
 import { SpaComponent } from './pages/spa/spa.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -34,13 +40,17 @@ import { ShopComponent } from './pages/shop/shop.component';
     MascotasComponent,
     ServiciomedicoComponent,
     SpaComponent,
-    ShopComponent
+    ShopComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

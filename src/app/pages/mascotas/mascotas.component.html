@@ -1,1 +1,86 @@
-<p>mascotas works!</p>
+<!-- Contact Section-->
+<section class="page-section" id="contact">
+  <div class="container">
+
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registrar Mascota</h2>
+    </div>
+    <!-- Contact Section Form-->
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <form ngNativeValidate [formGroup]="formularioMascota" (ngSubmit)="registrarMascota()" id="formularioMascota" action="#">
+
+          <!--<div class="control-group">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Imagen</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </div>-->
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+              <input class="form-control" formControlName="nombre" name="nombre" id="nombre" type="text" placeholder="Nombre de la mascota" required="required"
+                data-validation-required-message="Please enter your name." />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+
+              <select  class="form-control" formControlName="tipo" name="tipo" id="tipo" placeholder="Tipo de la mascota" >
+                <option selected>Tipo de Mascota</option>
+                <option value="1">Gato</option>
+                <option value="2">Perro</option>
+                <option value="3">Pez</option>
+                <option value="4">Otro</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+
+              <input class="form-control" formControlName="edad" name="edad" id="edad" type="number" placeholder="Edad" required="required"
+                data-validation-required-message="Please enter your phone number." />
+              <p class="help-block text-danger"></p>
+
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+
+              <select class="form-control" formControlName="tamano" name="tamano" id="tamano">
+                <option selected>Tamaño</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Big</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+
+              <textarea class="form-control" formControlName="descripcion" name="descripcion" id="descripcion" rows="5" placeholder="Descripcion" required="required"
+                data-validation-required-message="Please enter a message."></textarea>
+              <p class="help-block text-danger"></p>
+
+            </div>
+          </div>
+          <br />
+          <div id="success"></div>
+          <div class="form-group" align="center" >
+            <button class="btn btn-primary btn-xl" id="sendMessageButton"
+              type="submit">Inicio
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

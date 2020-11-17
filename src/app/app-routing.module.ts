@@ -7,6 +7,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 import { PagesComponent } from './pages/pages.component';
+import { MascotasComponent } from './pages/mascotas/mascotas.component';
+import { ServiciomedicoComponent } from './pages/serviciomedico/serviciomedico.component';
+import { ShopComponent } from './pages/shop/shop.component';
 
 const routes: Routes = [
 
@@ -14,6 +17,9 @@ const routes: Routes = [
   component: PagesComponent,
   children: [
     { path: 'dashboard', component: DashboardComponent },
+    { path: 'mascota', component: MascotasComponent },
+    { path: 'servicios', component: ServiciomedicoComponent },
+    { path: 'tienda', component: ShopComponent },
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
   ]

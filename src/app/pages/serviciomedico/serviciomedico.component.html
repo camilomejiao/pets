@@ -1,1 +1,119 @@
-<p>serviciomedico works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <h3 class="card-title">Citas </h3>
+        <br>
+
+        <button class="btn btn-success" data-toggle="modal" data-target="#cita">
+          <i class="fa fa-save"></i> Nueva Cita
+        </button>
+
+        <div>
+          <!-- Bases -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Descripcion</th>
+                <th>Fecha</th>
+                <th colspan="2">Accions</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor='let cita of citas'>
+                <td>{{cita.user}}</td>
+                <td>{{cita.nombre}}</td>
+                <td>{{cita.fecha}}</td>
+                <td>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#cita">
+                      <i class="fa fa-save"></i> Actulizar Cita
+                    </button>
+                </td>
+                <td>
+                  <button (click)="eliminarCita(cita)" class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i>
+                  </button>
+                </td>
+              </tr>
+              <hr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="cita" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pedir Cita</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form ngNativeValidate [formGroup]="formularioCitas" (ngSubmit)="registrarCita()"
+            class="form-horizontal form-material" id="cita" action="#">
+
+            <div class="md-form pb-3">
+              <input type="password" id="Form-pass5" class="form-control validate white-text">
+
+              <div class="form-group mt-4">
+                <input class="form-check-input"  formControlName="citamedica" name="citamedica" type="checkbox" id="citamedica">
+                <label for="citamedica" class="white-text form-check-label">Cita Medica</label>
+              </div>
+
+              <div class="form-group mt-4">
+                <input class="form-check-input" formControlName="citavacunacion" name="citavacunacion" type="checkbox" id="citavacunacion">
+                <label for="citavacunacion" class="white-text form-check-label">Cita de Vacunación</label>
+              </div>
+
+              <div class="form-group mt-4">
+                <input class="form-check-input" formControlName="citadesparacion" name="citadesparacion" type="checkbox" id="citadesparacion">
+                <label for="citadesparacion" class="white-text form-check-label">Cita de Desparacitación</label>
+              </div>
+
+              <div class="form-group mt-4">
+                <input class="form-check-input" formControlName="citabano" name="citabano" type="checkbox" id="citabano">
+                <label for="citabano" class="white-text form-check-label">Cita de Baño</label>
+              </div>
+
+              <div class="form-group mt-4">
+                <input class="form-check-input" formControlName="citacortecabello" name="citacortecabello" type="checkbox" id="citacortecabello">
+                <label for="citacortecabello" class="white-text form-check-label">Cita de Corte de Cabello</label>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" formControlName="fecha" name="fecha" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" (click)="registrarCita()">Pedir Cita</button>
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
